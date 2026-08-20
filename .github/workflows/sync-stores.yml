@@ -1,0 +1,47 @@
+name: Sync Joie BeLux stores from Google Sheets
+
+permissions:
+  contents: write
+
+"on":
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: joie-store-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download spreadsheet and rebuild store data
+        run: python scripts/sync_stores.py
+
+      - name: Commit updated JSON files
+        shell: bash
+        run: |
+          if git diff --quiet -- stores.json stores-nl.json stores-fr.json; then
+            echo "Geen wijzigingen in de winkelpunten."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stores.json stores-nl.json stores-fr.json
+          git commit -m "Auto-sync stores from Google Sheets"
+          git pull --rebase
+          git push
