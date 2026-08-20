@@ -1,0 +1,426 @@
+/*
+ * Joie BeLux Store Locator - shared brand shell
+ * Based on the supplied Joie design system and brand references.
+ * The header intentionally contains only the Joie logo and NL/FR language choice.
+ * No proprietary font binaries are bundled.
+ */
+
+:root {
+  --joie-slate-900: #212122;
+  --joie-slate-800: #2f3031;
+  --joie-slate-700: #434446;
+  --joie-slate-600: #5f6164;
+  --joie-slate-500: #898b8e;
+  --joie-slate-400: #c4c5c7;
+  --joie-slate-300: #e1e2e3;
+  --joie-slate-200: #f0f0f1;
+  --joie-slate-100: #f8f8f8;
+  --joie-periwinkle-900: #0e1e32;
+  --joie-periwinkle-800: #142b47;
+  --joie-periwinkle-700: #1d3d65;
+  --joie-periwinkle-600: #295891;
+  --joie-periwinkle-500: #3777c4;
+  --joie-action-blue: #407ec9;
+  --joie-periwinkle-300: #cfdff2;
+  --joie-periwinkle-200: #e7eff8;
+  --joie-periwinkle-100: #f3f7fc;
+  --joie-mango-900: #573d00;
+  --joie-mango-700: #926600;
+  --joie-mango-500: #f2a900;
+  --joie-mango-400: #ffcd58;
+  --joie-mango-200: #ffebbe;
+  --joie-mango-100: #fff3d6;
+  --joie-mango-50: #fff7e5;
+  --joie-mint-900: #25675a;
+  --joie-mint-300: #dcf3ee;
+  --joie-mint-200: #e9f7f4;
+  --joie-mint-100: #f1faf8;
+  --joie-cherry-700: #b9071f;
+  --joie-cherry-50: #feeef0;
+  --joie-ivory-500: #f7f4f0;
+  --joie-white: #fff;
+
+  --joie-font-body: "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --joie-font-heading: "Mikado", "Fredoka", "Lexend", sans-serif;
+  --joie-font-signature: "Colfax", "Lexend", sans-serif;
+
+  --joie-shell-width: 1280px;
+  --joie-page-gutter: clamp(20px, 4vw, 64px);
+  --joie-radius: 4px;
+  --joie-header-height: 78px;
+  --joie-focus: 0 0 0 4px rgba(64, 126, 201, .22);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--joie-header-height) + 24px);
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--joie-white);
+  color: var(--joie-slate-700);
+  font-family: var(--joie-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: var(--joie-focus);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Simplified sticky header: language choice plus centered Joie logo only. */
+
+.joie-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  width: 100%;
+  border-bottom: 2px solid var(--joie-slate-300);
+  background: var(--joie-white);
+}
+
+.joie-utility-bar,
+.joie-utility-inner {
+  height: var(--joie-header-height);
+}
+
+.joie-utility-inner {
+  position: relative;
+  width: min(calc(100% - 40px), var(--joie-shell-width));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.joie-main-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 92px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+}
+
+.joie-main-logo img {
+  width: 92px;
+  height: auto;
+}
+
+.joie-language-switch {
+  min-width: 96px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--joie-slate-600);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.joie-language-switch a {
+  padding: 10px 2px 8px;
+  border-bottom: 2px solid transparent;
+  color: inherit;
+  text-decoration: none;
+}
+
+.joie-language-switch a:hover,
+.joie-language-switch a.active {
+  border-bottom-color: var(--joie-action-blue);
+  color: var(--joie-action-blue);
+}
+
+/* Footer */
+
+.site-footer {
+  position: relative;
+  margin-top: auto;
+  background: var(--joie-white);
+  color: var(--joie-slate-700);
+}
+
+.joie-footer-rule {
+  height: 2px;
+  margin: 0;
+  background: var(--joie-action-blue);
+}
+
+.joie-footer-main {
+  width: min(calc(100% - 40px), var(--joie-shell-width));
+  min-height: 434px;
+  margin: 0 auto;
+  padding: 52px 0 70px;
+  display: grid;
+  grid-template-columns: 180px 1.1fr 1fr .9fr;
+  gap: clamp(42px, 5vw, 86px);
+  align-items: start;
+}
+
+.joie-footer-brand img {
+  width: 112px;
+  height: auto;
+}
+
+.joie-footer-column h2 {
+  margin: 0 0 24px;
+  color: var(--joie-action-blue);
+  font-family: var(--joie-font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  line-height: 1.3;
+}
+
+.joie-footer-column p {
+  margin: 0;
+  color: var(--joie-slate-600);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.joie-footer-links-column .footer-links {
+  display: grid;
+  align-items: start;
+  gap: 16px;
+}
+
+.joie-footer-links-column .footer-links a {
+  width: fit-content;
+  color: var(--joie-slate-700);
+  font-size: 15px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.joie-footer-links-column .footer-links a:hover {
+  color: var(--joie-action-blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.joie-back-to-top {
+  position: absolute;
+  right: max(20px, calc((100% - var(--joie-shell-width)) / 2));
+  bottom: 70px;
+  width: 56px;
+  height: 56px;
+  padding: 13px;
+  border: 3px solid var(--joie-action-blue);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--joie-white);
+  color: var(--joie-action-blue);
+  cursor: pointer;
+}
+
+.joie-back-to-top:hover {
+  background: var(--joie-periwinkle-100);
+}
+
+.joie-back-to-top svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.joie-footer-bottom {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  background: var(--joie-action-blue);
+  color: var(--joie-white);
+}
+
+.joie-footer-bottom-inner {
+  width: min(calc(100% - 40px), var(--joie-shell-width));
+  min-height: 40px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 28px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.joie-footer-region {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.joie-footer-region svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.joie-footer-owner {
+  text-align: center;
+}
+
+.joie-footer-bottom nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 28px;
+}
+
+.joie-footer-bottom a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.joie-footer-bottom a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+  :root {
+    --joie-header-height: 64px;
+  }
+
+  .joie-utility-inner {
+    width: calc(100% - 28px);
+  }
+
+  .joie-main-logo {
+    width: 74px;
+    height: 40px;
+  }
+
+  .joie-main-logo img {
+    width: 74px;
+  }
+
+  .joie-language-switch {
+    min-width: 82px;
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .joie-language-switch a {
+    padding-inline: 1px;
+  }
+
+  .joie-footer-main {
+    grid-template-columns: 130px 1fr 1fr;
+    gap: 38px;
+  }
+
+  .joie-footer-links-column {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .joie-footer-main {
+    min-height: 0;
+    padding: 38px 0 86px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .joie-footer-links-column {
+    grid-column: auto;
+  }
+
+  .joie-footer-brand img {
+    width: 92px;
+  }
+
+  .joie-footer-column h2 {
+    margin-bottom: 12px;
+  }
+
+  .joie-back-to-top {
+    right: 20px;
+    bottom: 94px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .joie-footer-bottom-inner {
+    padding: 14px 0;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    justify-items: start;
+  }
+
+  .joie-footer-owner {
+    text-align: left;
+  }
+
+  .joie-footer-bottom nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 9px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

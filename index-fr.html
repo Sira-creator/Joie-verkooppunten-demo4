@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Trouvez les points de vente et boutiques en ligne Joie en Belgique et au Luxembourg." name="description"/>
+<title>Points de vente Joie Belgique et Luxembourg</title>
+
+
+
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="./joie-design-system.css" rel="stylesheet"/><link href="./joie-store-locator.css" rel="stylesheet"/></head>
+<body class="joie-locator-page">
+
+<header class="joie-site-header">
+<div class="joie-utility-bar">
+<div class="joie-utility-inner">
+<nav aria-label="Choix de langue" class="joie-language-switch">
+<a class="" href="./index.html" hreflang="nl" lang="nl">NL</a>
+<span aria-hidden="true">/</span>
+<a class="active" href="./index-fr.html" hreflang="fr" lang="fr" aria-current="page">FR</a>
+</nav>
+<a aria-label="Joie" class="joie-main-logo" href="./index-fr.html">
+<img alt="Joie" src="./assets/joie-logo.webp"/>
+</a>
+</div>
+</div>
+</header>
+
+<main class="container" id="store-search">
+<section aria-labelledby="page-title" class="hero">
+<h1 id="page-title">Trouvez Joie près de chez vous</h1>
+<p class="subtitle">Découvrez les points de vente officiels en Belgique et au Luxembourg.</p>
+</section>
+<section aria-label="Recherche de points de vente" class="search-section">
+<div class="input-group">
+<input autocomplete="postal-code" id="locationInput" placeholder="Code postal ou ville (p. ex. 5000 Namur)" type="text"/>
+<button class="btn-secondary" id="resetSearchButton" type="button">Réinitialiser</button>
+<button class="btn-primary" id="searchButton" type="button">Rechercher</button>
+</div>
+<button class="btn-location" id="useLocationBtn" type="button">
+<span class="location-label">
+<svg aria-hidden="true" class="button-icon" viewbox="0 0 24 24">
+<path d="M12 2a1 1 0 0 1 1 1v1.07A8 8 0 0 1 19.93 11H21a1 1 0 1 1 0 2h-1.07A8 8 0 0 1 13 19.93V21a1 1 0 1 1-2 0v-1.07A8 8 0 0 1 4.07 13H3a1 1 0 1 1 0-2h1.07A8 8 0 0 1 11 4.07V3a1 1 0 0 1 1-1Zm0 4a6 6 0 1 0 0 12A6 6 0 0 0 12 6Zm0 3.25A2.75 2.75 0 1 1 12 14.75 2.75 2.75 0 0 1 12 9.25Z" fill="currentColor"></path>
+</svg>
+          Utiliser ma position actuelle
+        </span>
+</button>
+<div aria-live="polite" id="statusMessage"></div>
+</section>
+<section aria-label="Carte des points de vente Joie" class="map-section" id="mapShell">
+<div class="map-toolbar">
+<div aria-label="Carte" class="map-summary-line">
+<span class="map-eyebrow">Carte</span>
+</div>
+<button aria-controls="mapPanel" aria-expanded="true" class="map-toggle-button" id="mapToggleButton" type="button">
+<span id="mapToggleLabel">Replier la carte</span>
+</button>
+<button class="map-fit-button" id="mapFitButton" type="button">Afficher tous les points de vente</button>
+</div>
+<div class="map-panel" id="mapPanel">
+<div aria-label="Carte interactive des points de vente Joie" class="store-map" id="storeMap"></div>
+</div>
+</section>
+<section aria-live="polite" class="store-list" id="storeList">
+<div class="loading">Chargement des magasins...</div>
+</section>
+</main>
+<section aria-label="Instagram" class="instagram-section">
+<div class="instagram-card">
+<div class="instagram-badge">
+<svg aria-hidden="true" class="instagram-icon" viewbox="0 0 24 24">
+<path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" fill="currentColor"></path>
+</svg>
+</div>
+<div>
+<h2 class="instagram-title">Joie Belgique &amp; Luxembourg sur Instagram</h2>
+<p class="instagram-text">Suivez-nous pour de l’inspiration, des conseils et les nouveautés produits.</p>
+</div>
+<a class="instagram-cta" href="https://www.instagram.com/joiebaby_be/" rel="noopener" target="_blank">
+        Suivre @joiebaby_be
+      </a>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="joie-footer-rule"></div>
+<div class="joie-footer-main">
+<section aria-label="Joie" class="joie-footer-brand">
+<img alt="Joie" src="./assets/joie-logo.webp"/>
+</section>
+<section class="joie-footer-column">
+<h2>Joie Belgique &amp; Luxembourg</h2>
+<p class="footer-official">Cette page est gérée par Bomedys NV, distributeur officiel de Joie pour la Belgique et le Luxembourg.</p>
+</section>
+<section class="joie-footer-column">
+<h2>Information importante</h2>
+<p class="footer-disclaimer">L’assortiment, le stock, la disponibilité et les prix peuvent varier selon le magasin.</p>
+</section>
+<section class="joie-footer-column joie-footer-links-column">
+<h2>Informations</h2>
+<nav aria-label="Informations" class="footer-links"><a href="./info-fr.html">Informations légales</a><a href="./privacy-fr.html">Politique de confidentialité</a><a href="./cookies-fr.html">Politique relative aux cookies</a><a href="./openstreetmap-fr.html">OpenStreetMap</a></nav>
+</section>
+</div>
+<button aria-label="Retour en haut" class="joie-back-to-top" data-joie-back-to-top="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 20V4M5.5 10.5 12 4l6.5 6.5"></path></svg></button>
+<div class="joie-footer-bottom">
+<div class="joie-footer-bottom-inner">
+<span class="joie-footer-region"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21M12 3C9.5 5.5 8.2 8.5 8.2 12S9.5 18.5 12 21"></path></svg><span>Belgique &amp; Luxembourg</span></span>
+<span class="joie-footer-owner">Bomedys NV</span>
+<nav aria-label="Informations"><a href="./info-fr.html">Informations légales</a><a href="./privacy-fr.html">Politique de confidentialité</a><a href="./cookies-fr.html">Politique relative aux cookies</a></nav>
+</div>
+</div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+    window.JOIE_CONFIG = {
+      lang: "fr",
+      storesJsonUrl: "./stores.json",
+      locale: "fr-BE",
+      googleMapsHl: "fr",
+      defaultView: {
+        center: [50.42, 5.12],
+        zoom: 8
+      },
+      text: {
+        loading: "Chargement des magasins...",
+        no_results: "Aucun magasin trouvé.",
+        maps: "Calculer l’itinéraire via Google Maps",
+        webshop: "Boutique en ligne",
+        distance_suffix: "km",
+        getting_location: "Récupération de la position...",
+        location_success: "Trié par distance depuis votre position.",
+        location_error: "Impossible de récupérer votre position. Autorisez l’accès à la localisation dans votre navigateur.",
+        location_unavailable: "Les informations de localisation ne sont pas disponibles.",
+        location_timeout: "Le délai de localisation est dépassé.",
+        searching: "Recherche de la position...",
+        search_success: "Trié par distance depuis “{query}”.",
+        local_match_success: "Trié par distance depuis “{query}”.",
+        search_error: "Position introuvable. Essayez un autre code postal ou une autre ville.",
+        search_failed: "Une erreur s’est produite lors de la recherche. Réessayez.",
+        enter_address: "Saisissez une adresse, un code postal ou une ville.",
+        geo_not_supported: "La géolocalisation n’est pas prise en charge par votre navigateur.",
+        load_error: "Impossible de charger les magasins. Vérifiez que stores.json se trouve à côté de cette page HTML.",
+        map_count: "{count} points de vente.",
+        map_count_single: "1 point de vente.",
+        map_show_all: "Afficher les {count} points de vente",
+        map_show_all_single: "Afficher 1 point de vente",
+        map_show_all_empty: "Afficher tous les points de vente",
+        current_location_label: "Votre position",
+        map_collapse: "Replier la carte",
+        map_expand: "Déplier la carte"
+      }
+    };
+  </script>
+<script src="./joie-store-locator.js"></script>
+<script src="./joie-shell.js"></script></body>
+</html>

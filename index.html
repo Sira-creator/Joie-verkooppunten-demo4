@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Vind officiële Joie-verkooppunten en webshops in België en Luxemburg." name="description"/>
+<title>Joie verkooppunten België en Luxemburg</title>
+
+
+
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="./joie-design-system.css" rel="stylesheet"/><link href="./joie-store-locator.css" rel="stylesheet"/></head>
+<body class="joie-locator-page">
+
+<header class="joie-site-header">
+<div class="joie-utility-bar">
+<div class="joie-utility-inner">
+<nav aria-label="Taalkeuze" class="joie-language-switch">
+<a class="active" href="./index.html" hreflang="nl" lang="nl" aria-current="page">NL</a>
+<span aria-hidden="true">/</span>
+<a class="" href="./index-fr.html" hreflang="fr" lang="fr">FR</a>
+</nav>
+<a aria-label="Joie" class="joie-main-logo" href="./index.html">
+<img alt="Joie" src="./assets/joie-logo.webp"/>
+</a>
+</div>
+</div>
+</header>
+
+<main class="container" id="store-search">
+<section aria-labelledby="page-title" class="hero">
+<h1 id="page-title">Vind Joie bij jou in de buurt</h1>
+<p class="subtitle">Ontdek de officiële verkooppunten in België en Luxemburg.</p>
+</section>
+<section aria-label="Zoeken naar verkooppunten" class="search-section">
+<div class="input-group">
+<input autocomplete="postal-code" id="locationInput" placeholder="Postcode of stad (bijvoorbeeld 9000 Gent)" type="text"/>
+<button class="btn-secondary" id="resetSearchButton" type="button">Reset</button>
+<button class="btn-primary" id="searchButton" type="button">Zoek winkels</button>
+</div>
+<button class="btn-location" id="useLocationBtn" type="button">
+<span class="location-label">
+<svg aria-hidden="true" class="button-icon" viewbox="0 0 24 24">
+<path d="M12 2a1 1 0 0 1 1 1v1.07A8 8 0 0 1 19.93 11H21a1 1 0 1 1 0 2h-1.07A8 8 0 0 1 13 19.93V21a1 1 0 1 1-2 0v-1.07A8 8 0 0 1 4.07 13H3a1 1 0 1 1 0-2h1.07A8 8 0 0 1 11 4.07V3a1 1 0 0 1 1-1Zm0 4a6 6 0 1 0 0 12A6 6 0 0 0 12 6Zm0 3.25A2.75 2.75 0 1 1 12 14.75 2.75 2.75 0 0 1 12 9.25Z" fill="currentColor"></path>
+</svg>
+          Gebruik mijn huidige locatie
+        </span>
+</button>
+<div aria-live="polite" id="statusMessage"></div>
+</section>
+<section aria-label="Kaart met Joie-verkooppunten" class="map-section" id="mapShell">
+<div class="map-toolbar">
+<div aria-label="Kaart" class="map-summary-line">
+<span class="map-eyebrow">Kaart</span>
+</div>
+<button aria-controls="mapPanel" aria-expanded="true" class="map-toggle-button" id="mapToggleButton" type="button">
+<span id="mapToggleLabel">Kaart inklappen</span>
+</button>
+<button class="map-fit-button" id="mapFitButton" type="button">Toon alle verkooppunten</button>
+</div>
+<div class="map-panel" id="mapPanel">
+<div aria-label="Interactieve kaart met Joie-verkooppunten" class="store-map" id="storeMap"></div>
+</div>
+</section>
+<section aria-live="polite" class="store-list" id="storeList">
+<div class="loading">Winkels laden...</div>
+</section>
+</main>
+<section aria-label="Instagram" class="instagram-section">
+<div class="instagram-card">
+<div class="instagram-badge">
+<svg aria-hidden="true" class="instagram-icon" viewbox="0 0 24 24">
+<path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" fill="currentColor"></path>
+</svg>
+</div>
+<div>
+<h2 class="instagram-title">Joie België &amp; Luxemburg op Instagram</h2>
+<p class="instagram-text">Volg ons voor inspiratie, tips en productnieuws.</p>
+</div>
+<a class="instagram-cta" href="https://www.instagram.com/joiebaby_be/" rel="noopener" target="_blank">
+        Volg @joiebaby_be
+      </a>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="joie-footer-rule"></div>
+<div class="joie-footer-main">
+<section aria-label="Joie" class="joie-footer-brand">
+<img alt="Joie" src="./assets/joie-logo.webp"/>
+</section>
+<section class="joie-footer-column">
+<h2>Joie België &amp; Luxemburg</h2>
+<p class="footer-official">Deze pagina wordt beheerd door Bomedys NV, officiële distributeur van Joie voor België en Luxemburg.</p>
+</section>
+<section class="joie-footer-column">
+<h2>Belangrijke informatie</h2>
+<p class="footer-disclaimer">Assortiment, voorraad, beschikbaarheid en prijzen kunnen verschillen per winkel.</p>
+</section>
+<section class="joie-footer-column joie-footer-links-column">
+<h2>Informatie</h2>
+<nav aria-label="Informatie" class="footer-links"><a href="./info.html">Wettelijke informatie</a><a href="./privacy.html">Privacybeleid</a><a href="./cookies.html">Cookiebeleid</a><a href="./openstreetmap.html">OpenStreetMap</a></nav>
+</section>
+</div>
+<button aria-label="Terug naar boven" class="joie-back-to-top" data-joie-back-to-top="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 20V4M5.5 10.5 12 4l6.5 6.5"></path></svg></button>
+<div class="joie-footer-bottom">
+<div class="joie-footer-bottom-inner">
+<span class="joie-footer-region"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21M12 3C9.5 5.5 8.2 8.5 8.2 12S9.5 18.5 12 21"></path></svg><span>België &amp; Luxemburg</span></span>
+<span class="joie-footer-owner">Bomedys NV</span>
+<nav aria-label="Informatie"><a href="./info.html">Wettelijke informatie</a><a href="./privacy.html">Privacybeleid</a><a href="./cookies.html">Cookiebeleid</a></nav>
+</div>
+</div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+    window.JOIE_CONFIG = {
+      lang: "nl",
+      storesJsonUrl: "./stores.json",
+      locale: "nl-BE",
+      googleMapsHl: "nl",
+      defaultView: {
+        center: [51.05, 4.45],
+        zoom: 8
+      },
+      text: {
+        loading: "Winkels laden...",
+        no_results: "Geen winkels gevonden.",
+        maps: "Bereken route via Google Maps",
+        webshop: "Webshop",
+        distance_suffix: "km",
+        getting_location: "Locatie ophalen...",
+        location_success: "Gesorteerd op afstand vanaf jouw locatie.",
+        location_error: "Kon je locatie niet ophalen. Geef toestemming voor locatietoegang in je browser.",
+        location_unavailable: "Locatie-informatie is niet beschikbaar.",
+        location_timeout: "Er is een timeout opgetreden.",
+        searching: "Locatie zoeken...",
+        search_success: "Gesorteerd op afstand vanaf “{query}”.",
+        local_match_success: "Gesorteerd op afstand vanaf “{query}”.",
+        search_error: "Locatie niet gevonden. Probeer een andere postcode of stad.",
+        search_failed: "Er ging iets mis bij het zoeken. Probeer opnieuw.",
+        enter_address: "Voer een adres, postcode of stad in.",
+        geo_not_supported: "Geolocatie wordt niet ondersteund door je browser.",
+        load_error: "Kon de winkels niet laden. Controleer of stores.json naast deze HTML-pagina staat.",
+        map_count: "{count} verkooppunten.",
+        map_count_single: "1 verkooppunt.",
+        map_show_all: "Toon alle {count} verkooppunten",
+        map_show_all_single: "Toon 1 verkooppunt",
+        map_show_all_empty: "Toon alle verkooppunten",
+        current_location_label: "Jouw locatie",
+        map_collapse: "Kaart inklappen",
+        map_expand: "Kaart uitklappen"
+      }
+    };
+  </script>
+<script src="./joie-store-locator.js"></script>
+<script src="./joie-shell.js"></script></body>
+</html>

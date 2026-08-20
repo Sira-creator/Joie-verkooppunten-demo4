@@ -1,0 +1,137 @@
+.joie-legal-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.joie-legal-page .page {
+  width: min(calc(100% - 40px), 1040px);
+  margin: 0 auto;
+  padding: 50px 0 70px;
+  flex: 1 0 auto;
+}
+
+.joie-legal-page .back-link {
+  width: fit-content;
+  margin: 0 0 26px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--joie-action-blue);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.joie-legal-page .back-link:hover {
+  color: var(--joie-periwinkle-700);
+}
+
+.joie-legal-page .content-card {
+  padding: 44px 48px;
+  border: 1px solid var(--joie-slate-300);
+  border-radius: var(--joie-radius);
+  background: var(--joie-white);
+}
+
+.joie-legal-page h1 {
+  margin: 0 0 20px;
+  color: var(--joie-slate-700);
+  font-family: var(--joie-font-heading);
+  font-size: clamp(38px, 5vw, 50px);
+  font-weight: 600;
+  letter-spacing: .5px;
+  line-height: 1.2;
+}
+
+.joie-legal-page h2 {
+  margin: 38px 0 12px;
+  color: var(--joie-slate-700);
+  font-family: var(--joie-font-heading);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.joie-legal-page p,
+.joie-legal-page li {
+  color: var(--joie-slate-600);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.joie-legal-page p {
+  margin: 0 0 16px;
+}
+
+.joie-legal-page ul,
+.joie-legal-page ol {
+  margin: 10px 0 22px;
+  padding-left: 24px;
+}
+
+.joie-legal-page li + li {
+  margin-top: 8px;
+}
+
+.joie-legal-page .content-card a {
+  color: var(--joie-action-blue);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.joie-legal-page .content-card a:hover {
+  color: var(--joie-periwinkle-700);
+}
+
+.joie-legal-page code {
+  padding: 2px 6px;
+  border: 1px solid var(--joie-slate-300);
+  border-radius: 3px;
+  background: var(--joie-slate-100);
+  color: var(--joie-slate-700);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .9em;
+}
+
+.joie-legal-page .company-card {
+  margin: 18px 0 24px;
+  padding: 22px 24px;
+  border-left: 5px solid var(--joie-mint-900);
+  border-radius: var(--joie-radius);
+  background: var(--joie-mint-200);
+}
+
+.joie-legal-page .company-card p {
+  margin: 0;
+  color: var(--joie-mint-900);
+}
+
+.joie-legal-page .small-note {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--joie-slate-300);
+  color: var(--joie-slate-500);
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .joie-legal-page .page {
+    width: calc(100% - 28px);
+    padding: 34px 0 48px;
+  }
+
+  .joie-legal-page .content-card {
+    padding: 28px 20px;
+  }
+
+  .joie-legal-page h1 {
+    font-size: 34px;
+  }
+
+  .joie-legal-page h2 {
+    margin-top: 30px;
+    font-size: 24px;
+  }
+}
