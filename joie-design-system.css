@@ -2,8 +2,32 @@
  * Joie BeLux Store Locator - shared brand shell
  * Based on the supplied Joie design system and brand references.
  * The header intentionally contains only the Joie logo and NL/FR language choice.
- * No proprietary font binaries are bundled.
+ * Mikado is loaded from user-supplied font files in ./assets/fonts/.
  */
+
+@font-face {
+  font-family: "Mikado";
+  src: url("./assets/fonts/HVD%20Fonts%20-%20MikadoRegular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mikado";
+  src: url("./assets/fonts/HVD%20Fonts%20-%20MikadoMedium.otf") format("opentype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mikado";
+  src: url("./assets/fonts/HVD%20Fonts%20-%20MikadoBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
 
 :root {
   --joie-slate-900: #212122;
